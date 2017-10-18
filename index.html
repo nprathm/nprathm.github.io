@@ -1,68 +1,348 @@
----
-layout: blog
-title: index
-permalink: /
----
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="theme-color" content="#2196F3">
+    <title>Prathmesh Nalawade</title>
 
-<div class="navbar-wrapper">
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#page-top" id="i18_title"><span data-i18n="website.title">{{ site.title }}</span></a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right" id="i18_navbar">
-          {% for section in site.data.landing %}
-          <li>
-            {% if section.page %}
-              <a class="page-scroll" href="{{ section.page}} ">
-            {% else %}
-              <a class="page-scroll" href="{{ section.id | prepend: '#'}} ">
-            {% endif %}
-              <span data-i18n="{{ section.i18n }}">{{ section.name }}</span>
-            </a>
-          </li>
-          {% endfor %}
-          {% for language in site.data.index.language %}
-          <li>
-            <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
-              <img src="{{ language.flag | prepend: site.baseurl }}" height="16" width="16">
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- CSS  -->
+    <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
+    <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
+</head>
+<body id="top" class="scrollspy">
+
+<!-- Pre Loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+ 
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+ 
 </div>
-{% if site.index_carousel %}
-{% include carousel.html %}
-{% endif %}
 
-{% for section in site.data.landing %}
-{% assign loopindex = forloop.index | modulo: 2 %}
-<section id="{{ section.id }}" class="features {% if loopindex != 1 %} gray-section {% endif %} {{ section.css }}" style="margin-top: 0;">
-  {% include sections/{{section.tpl}} %}
-</section>
-{% endfor %}
-<style>
-iframe {
-  -moz-transform: scale(0.25, 0.25);
-  -webkit-transform: scale(0.25, 0.25);
-  -o-transform: scale(0.25, 0.25);
-  -ms-transform: scale(0.25, 0.25);
-  transform: scale(0.25, 0.25);
-  -moz-transform-origin: top left;
-  -webkit-transform-origin: top left;
-  -o-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-}
-</style>
-<iframe src="https://www.maimemo.com/share/page/?uid=779139&pid=660" style="display: none;"></iframe>
+<!--Navigation-->
+ <div class="navbar-fixed">
+    <nav id="nav_f" class="default_color" role="navigation">
+        <div class="container">
+            <div class="nav-wrapper">
+            <a href="#" id="logo-container" class="brand-logo">Prathmesh N</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#intro">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="#intro">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#blog">bloog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!--Hero-->
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <h1 class="text_h center header cd-headline letters type">
+            <span>I Love</span> 
+            <span class="cd-words-wrapper waiting">
+                <b class="is-visible">creating</b>
+                <b>designing</b>
+                <b>developing</b>
+            </span>
+        </h1>
+    </div>
+</div>
+
+<!--Intro and service-->
+<div id="intro" class="section scrollspy">
+    <div class="container">
+        <div class="row">
+            <div  class="col s12">
+                <h2 class="center header text_h2"> Hi. I'm Prathmesh Nalawade.  I am a <span class="span_h2"> full-stack  </span> of web developer. I love <span class="span_h2"> coding </span> and building web application. </h2>
+            </div>
+
+            <div  class="col s12 m4 l4">
+                <div class="center promo promo-example">
+                    <i class="mdi-image-hdr-weak"></i>
+                    <h5 class="promo-caption">Skills</h5>
+                    <p class="light center">#PHP, #MYSQL, #ANGULARJS, #HTML5, #CSS3, 
+                    #PHALCON-PHP, #POSTGRESQL, #MONGODB, #REST-API, #MICRO-SERVICES, #BOOTSTRAP,
+                    #AWS, #WIFI-HOTSPOT, #OPENWRT, #FREERADIUS, #ELASTCISEARCH, #NETWORKING, #GIT</p>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="center promo promo-example">
+                    <i class="mdi-social-group"></i>
+                    <h5 class="promo-caption">Experience</h5>
+                    <p class="light center">I am having 6+ years of combined experience in the Web application, Food Tech, WiFi Hotspot system in the product based company.</p>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="center promo promo-example">
+                    <i class="mdi-action-favorite"></i>
+                    <h5 class="promo-caption">Hobbies</h5>
+                    <p class="light center">I love watching TV, Movies. Love to play cricket, ride bike and travel </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Work-->
+<div class="section scrollspy" id="work">
+    <div class="container">
+        <h2 class="header text_b">Work </h2>
+        <div class="row">
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <a href="http://www.livingfoodz.com" target="_blank">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/living-foodz-logo.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Living Foodz </span>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <a href="http://www.gorb.in/web/" target="_blank">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/gorb-logo.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">GORB </span>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <a href="http://www.whizzwifi.com" target="_blank">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/whizzwifi-logo.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Whizz WiFi </span>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <p><a href="http://www.jupicom.com/" target="_blank">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/jupicom-logo.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Jupicom </span>
+                    </div>
+                    </a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Parallax-->
+<div class="parallax-container">
+    <div class="parallax"><img src="img/parallax1.png"></div>
+</div>
+
+<!--blog-->
+<div class="section scrollspy" id="blog">
+    <div class="container">
+        <h2 class="header text_b"> Blogs </h2>
+        <div class="row">
+            <h2>Comming Soon</h2>
+            <!--div class="col s12 m3">
+                <div class="card card-avatar">
+                    <div class="waves-effect waves-block waves-light">
+                        <img class="activator" src="img/avatar1.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Flash <br/>
+                            <small><em><a class="red-text text-darken-1" href="#">CEO</a></em></small></span>
+                        <p>
+                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
+                                <i class="fa fa-twitter-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
+                                <i class="fa fa-google-plus-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
+                                <i class="fa fa-linkedin-square"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card card-avatar">
+                    <div class="waves-effect waves-block waves-light">
+                        <img class="activator" src="img/avatar2.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Cat Woman<br/>
+                            <small><em><a class="red-text text-darken-1" href="#">Designer</a></em></small>
+                        </span>
+                        <p>
+                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
+                                <i class="fa fa-twitter-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
+                                <i class="fa fa-google-plus-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
+                                <i class="fa fa-linkedin-square"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card card-avatar">
+                    <div class="waves-effect waves-block waves-light">
+                        <img class="activator" src="img/avatar3.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">
+                            Capt. America <br/>
+                            <small><em><a class="red-text text-darken-1" href="#">CMO</a></em></small></span>
+                        <p>
+                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
+                                <i class="fa fa-twitter-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
+                                <i class="fa fa-google-plus-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
+                                <i class="fa fa-linkedin-square"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card card-avatar">
+                    <div class="waves-effect waves-block waves-light">
+                        <img class="activator" src="img/avatar4.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Robin<br/>
+                            <small><em><a class="red-text text-darken-1" href="#">Developer</a></em></small></span>
+                        <p>
+                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
+                                <i class="fa fa-twitter-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
+                                <i class="fa fa-google-plus-square"></i>
+                            </a>
+                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
+                                <i class="fa fa-linkedin-square"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div-->
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<footer id="contact" class="page-footer default_color scrollspy">
+    <div class="container">  
+        <div class="row">
+            <!--div class="col l6 s12">
+                <form class="col s12" action="contact.php" method="post">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="mdi-action-account-circle prefix white-text"></i>
+                            <input id="icon_prefix" name="name" type="text" class="validate white-text">
+                            <label for="icon_prefix" class="white-text">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="mdi-communication-email prefix white-text"></i>
+                            <input id="icon_email" name="email" type="email" class="validate white-text">
+                            <label for="icon_email" class="white-text">Email-id</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="mdi-editor-mode-edit prefix white-text"></i>
+                            <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
+                            <label for="icon_prefix2" class="white-text">Message</label>
+                        </div>
+                        <div class="col offset-s7 s5">
+                            <button class="btn waves-effect waves-light red darken-1" type="submit">Submit
+                                <i class="mdi-content-send right white-text"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div-->
+            <!-- <div class="col l3 s12">
+                <h5 class="white-text">Email: nprathm@gmail.com</h5>
+            </div> -->
+            <div class="col l3 s12">
+                <h5 class="white-text">
+                    <a class="white-text" href="https://www.linkedin.com/in/prathm/">
+                        <i class="small fa fa-linkedin-square white-text"></i> Linkedin
+                    </a>
+                </h5>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">
+                    <a class="white-text" href="https://www.facebook.com/nprathm">
+                        <i class="small fa fa-facebook-square white-text"></i> Facebook
+                    </a>
+                </h5>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">
+                    <a class="white-text" href="https://twitter.com/nprathm">
+                        <i class="small fa fa-twitter-square white-text"></i> Twitter
+                    </a>
+                </h5>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">
+                    <a class="white-text" href="https://github.com/nprathm">
+                        <i class="small fa fa-github-square white-text"></i> Github
+                    </a>
+                </h5>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer-copyright default_color">
+        <div class="container">
+           
+        </div>
+    </div>
+</footer>
+
+
+    <!--  Scripts-->
+    <script src="min/plugin-min.js"></script>
+    <script src="min/custom-min.js"></script>
+
+    </body>
+</html>
